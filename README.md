@@ -27,8 +27,6 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
 |e-mail|string|null: false
 |name|string|null: false, index: true
 |password|string|null: false
@@ -43,8 +41,6 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
 |group_name|string|null: false
 
 ### Association
