@@ -30,7 +30,7 @@ Things you may want to cover:
 |user_id|reference|null: false, foreign_key: true|
 |group_id|reference|null: false, foreign_key: true|
 |e-mail|string|null: false
-|name|string|null: false|index: true
+|name|string|null: false, index: true
 |password|string|null: false
 
 ### Association
