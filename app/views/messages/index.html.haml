@@ -1,50 +1,42 @@
 .notification
-  .notice
-    チャットグループが作成されました。
-
-.wrapper
-  .side-bar
-    .side-bar__header
-      .side-bar__header-content
-        .side-bar__header-content--name
+  .notice チャットグループが作成されました。
+  .wrapper
+    .side-bar
+      .header
+        %h3.header__name
           seo
-        .side-bar__header-content--new-group
-          = link_to   do
-            %i.fa.fa-edit
-        .side-bar__header-content--edit
-          = link_to   do
-            %i.fa.fa-cog
-    .side-bar__groups
-      .side-bar__groups--list
-        .side-bar__group
-          .side-bar__group-name
-            test
-          .side-bar__group-message
-            test2
+        %ul.header__lists
+          %li.list
+            = link_to do
+              %i.fa.fa-pencil-square-o.icon
+          %li.list
+            = link_to do
+              %i.fa.fa-cog.icon
 
-  .chat
-    .chat__header
-      .chat__header--group
-        .chat__header--group-name
-          test
-        .chat__header--group-edit
-          = link_to do
-            edit
-      .chat__header--members
-        Member:test
-    .chat__body
-      .chat__body--messages-list
-        .chat-main__message
-          .chat-main__message-name
-            test
-          .chat-main__message-time
-            2018-12-34 00:00 UTC
-          .chat-main__message-body
-            test
+      .groups
+        = render "group"
 
-    .chat__footer
-      %input{placeholder:  "type a message", class: "message", type: "text"}
-      %label.chat-file{for: ""}
-        =link_to do
-          %i.fa.fa-picture-o
-          %input{ type: "submit", value: "Send", class:  "submit"}
+    .chat
+      .header
+        .left-header
+          .left-header__title
+            sample
+          %ul.left-header__members
+            Member :
+            %li.members
+              sample
+        .right-header
+          %a.right-header__button
+            Edit
+
+      .messages
+        = render "chat_message"
+
+
+      .form
+        %form#new_message
+          %input#message_content.form__message{:name => "message", :placeholder => "type a message", :type => "text"}/
+          .form__mask
+            %label.form__mask__image{:for => "message_image"}
+              %i.fa.fa-picture-o.icon
+          %input.form__submit{ type: "submit", value: "Send", class: "submit"}
