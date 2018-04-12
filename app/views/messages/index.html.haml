@@ -1,42 +1,40 @@
-.notification
-  .notice チャットグループが作成されました。
-  .wrapper
-    .side-bar
-      .header
-        %h3.header__name
-          seo
-        %ul.header__lists
-          %li.list
-            = link_to do
-              %i.fa.fa-pencil-square-o.icon
-          %li.list
-            = link_to do
-              %i.fa.fa-cog.icon
+.wrapper
+  .side-bar
+    .header
+      %h3.header__name
+        seo
+      %ul.header__lists
+        %li.list
+          = link_to do
+            %i.fa.fa-pencil-square-o.icon
+        %li.list
+          = link_to do
+            %i.fa.fa-cog.icon
 
-      .groups
-        = render "group"
+    .groups
+      = render "group"
 
-    .chat
-      .header
-        .left-header
-          .left-header__title
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          sample
+        %ul.left-header__members
+          Member :
+          %li.members
             sample
-          %ul.left-header__members
-            Member :
-            %li.members
-              sample
-        .right-header
-          %a.right-header__button
-            Edit
+      .right-header
+        %a.right-header__button
+          Edit
 
-      .messages
-        = render "chat_message"
+    .messages
+      = render "chat_message"
 
 
-      .form
-        %form#new_message
-          %input#message_content.form__message{:name => "message", :placeholder => "type a message", :type => "text"}/
-          .form__mask
-            %label.form__mask__image{:for => "message_image"}
-              %i.fa.fa-picture-o.icon
-          %input.form__submit{ type: "submit", value: "Send", class: "submit"}
+    .form
+      %form#new_message
+        %input#message_content.form__message{name: "message", placeholder: "type a message", type: "text"}/
+        .form__mask
+          %label.form__mask__image{for: "message_image"}
+            %i.fa.fa-picture-o.icon
+        %input.form__submit{type: "submit", value: "Send", class: "submit"}
