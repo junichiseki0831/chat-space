@@ -4,10 +4,9 @@
 
 @import "config/reset";
 @import "config/variable";
-@import "modules/notification";
 @import "modules/side-bar";
 @import "modules/chat";
 @import "modules/wrapper";
 @import "mixins/mixin";
-
-
+@import "modules/user";
+@import "modules/flash";
