@@ -1,117 +1,116 @@
-  .chat {
-    width: calc(100vw - 300px);
+.chat {
+  width: calc(100% - 300px);
+  .header {
     box-sizing: border-box;
-    float: left;
-
-    .header {
-      box-sizing: border-box;
-      height: 100px;
-      padding: 0 40px;
-      border-bottom: solid 1px #eeeeee;
-      .left-header {
-        float:left;
-        &__title {
-          color: #333;
-          font-size: 20px;
-          margin-top: 35px;
-        }
-        &__members {
-          font-size: 12px;
-          color: #999999;
-          margin-top: 15px;
-          .members {
-            display: inline-block;
-            padding-right: 5px;
-          }
-        }
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__title {
+        color: #333;
+        font-size: 20px;
+        margin-top: 35px;
       }
-      .right-header {
-        border: 1px solid $light_blue;
-        color: $light_blue;
-        float: right;
-        height: 40px;
-        line-height: 40px;
-        margin-top: 28px;
-        padding: 0 20px;
-      }
-    }
-
-    .messages {
-      background-color: #FAFAFA;
-      box-sizing: border-box;
-      height: calc(100vh - 100px - 90px);
-      padding: 46px 40px 0;
-      overflow: scroll;
-      .message {
-        margin-bottom: 40px;
-        .upper-message {
-          &__user-name {
-            display: inline-block;
-            color: #434a54;
-            font-size: 16px;
-            font-weight: bold;
-          }
-          &__date {
-            display: inline-block;
-            color: #999;
-            font-size: 16px;
-            padding-left: 10px;
-          }
-        }
-        .lower-message {
-          margin-top: 10px;
-          &__content {
-            color: #434a54;
-            font-size: 14px;
-            margin-bottom: 10px;
-          }
-        }
-      }
-    }
-
-    .form {
-      height: 90px;
-      background-color: #DDDDDD;
-      box-sizing: border-box;
-      padding: 20px 50px 20px 40px;
-
-      &__message {
-        border: none;
-        box-sizing: border-box;
-        float: left;
-        height: 50px;
-        padding: 0 10px;
-        width: calc(100% - 150px);
-      }
-
-      &__mask{
-        background-color: #FFFFFF;
-        float: left;
-        height: 50px;
-        padding-right: 10px;
-
-        &__image{
-          font-size: 20px;
-          line-height: 50px;
-
-        .fa{
+      &__members {
+        font-size: 12px;
+        color: $light_gray;
+        margin-top: 15px;
+        .members {
           display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size:20px;
+          padding-right: 5px;
         }
       }
     }
-
-      &__submit {
-        background-color: $light_blue;
-        border: none;
-        color: #fff;
-        float: right;
-        font-size: 16px;
-        height: 50px;
-        margin-left: 15px;
-        padding: 0 30px;
+    .right-header {
+      border: 1px solid $light_blue;
+      color: $light_blue;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      &__button {
+        color: $light_blue;
+        text-decoration: none;
       }
     }
   }
+
+  .messages {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    height: calc(100vh - 100px - 90px);
+    padding: 46px 40px 0;
+    overflow: scroll;
+    .message {
+      margin-bottom: 40px;
+      .upper-message {
+        &__user-name {
+          display: inline-block;
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          display: inline-block;
+          color: $light_gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .form {
+    height: 90px;
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    padding: 20px 50px 20px 40px;
+
+    &__message {
+      border: none;
+      box-sizing: border-box;
+      float: left;
+      height: 50px;
+      padding: 0 10px;
+      width: calc(100% - 150px);
+    }
+
+    &__mask{
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image{
+        font-size: 20px;
+        line-height: 50px;
+
+      .fa{
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size:20px;
+      }
+    }
+  }
+
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
+  }
+}
 

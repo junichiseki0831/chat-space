@@ -1,5 +1,9 @@
-.group
-  .group__name
-    sample
-  .group__message
-    sample
+
+.groups
+  - current_user.groups.each do |group|
+    .group
+      = link_to group_path(group) do
+        .group__name
+          = group.name
+        .group__message
+          メッセージはまだありません。
