@@ -28,13 +28,15 @@
           Edit
 
     .messages
-      = render "chat_message"
+      = render @messages
 
 
     .form
-      %form#new_message
-        %input#message_content.form__message{name: "message", placeholder: "type a message", type: "text"}/
+      = form_for [@group , @message] do |f|
+        =f.text_field :content, class: 'form__message' , placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image{for: "message_image"}
-            %i.fa.fa-picture-o.icon
-        %input.form__submit{type: "submit", value: "Send", class: "submit"}
+          = f.label :image, class: 'form__mask__image' do |f|
+            = fa_icon 'picture-o' , class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
