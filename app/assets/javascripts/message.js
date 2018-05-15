@@ -63,7 +63,7 @@ $(function(){
     }
 
     $(function() {
-      setInterval(update, 5000);
+      setInterval(update, 3000);
     });
 
     function update() {
@@ -73,7 +73,7 @@ $(function(){
         var message_id = 0
       }
       $.ajax({
-        url: location.pathname,
+        url: location.href,
         data: {
           message: { id: message_id }
         },
@@ -83,6 +83,7 @@ $(function(){
         $.each(data, function(i, data){
           buildMESSAGE(data);
         });
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
     }
 
