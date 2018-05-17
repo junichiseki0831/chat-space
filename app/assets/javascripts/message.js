@@ -63,14 +63,12 @@ $(function(){
     }
 
     $(function() {
-      setInterval(update, 3000);
+      setInterval(update, 5000);
     });
 
     function update() {
-      if ($('.message')[0]) {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var message_id = $('.message:last').data('id');
-      } else {
-        var message_id = 0
       }
       $.ajax({
         url: location.href,
@@ -80,7 +78,7 @@ $(function(){
         dataType: 'json'
       })
       .always(function(data) {
-        $.each(data, function(i, data){
+        data.forEach(function(data){
           buildMESSAGE(data);
         });
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
