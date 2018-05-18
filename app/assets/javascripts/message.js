@@ -4,7 +4,7 @@ $(function(){
     if (message.image){
       img = `<img src=${message.image} class: 'lower-message__image'>`
     }
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}">
                   <ul class="upper-message">
                     <li class="upper-message__user-name">
                       ${message.user_name}
@@ -46,4 +46,43 @@ $(function(){
       alert('error');
     })
   })
+
+  $(function(){
+    function buildMESSAGE(new_message) {
+      var message_list = $('.messages');
+      var html = `<div class="message" data-id="${new_message.id}">
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">${new_message.user_name}</div>
+                      <div class="upper-message__date">${new_message.created_at}</div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">${new_message.content}</p>
+                    </div>
+                  </div>`
+      message_list.append(html);
+    }
+
+    $(function() {
+      setInterval(update, 5000);
+    });
+
+    function update() {
+      if (location.pathname.match(/\/groups\/\d+\/messages/)){
+        var message_id = $('.message:last').data('id');
+      }
+      $.ajax({
+        url: location.href,
+        data: { id: message_id },
+        dataType: 'json'
+      })
+      .always(function(data) {
+        data.forEach(function(data){
+          buildMESSAGE(data);
+        });
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      })
+    }
+
+  });
+
 });
