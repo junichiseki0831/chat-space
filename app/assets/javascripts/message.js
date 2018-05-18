@@ -67,14 +67,12 @@ $(function(){
     });
 
     function update() {
-      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      if (location.pathname.match(/\/groups\/\d+\/messages/)){
         var message_id = $('.message:last').data('id');
       }
       $.ajax({
         url: location.href,
-        data: {
-          message: { id: message_id }
-        },
+        data: { id: message_id },
         dataType: 'json'
       })
       .always(function(data) {
