@@ -62,13 +62,10 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'carrierwave'
 gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
-  gem 'carrierwave'
-  gem 'fog'
 end
 
 group :development, :test do
