@@ -67,6 +67,8 @@ gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
+  gem 'carrierwave'
+  gem 'fog'
 end
 
 group :development, :test do
